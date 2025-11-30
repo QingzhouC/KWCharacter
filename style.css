@@ -1,0 +1,123 @@
+/* style.css */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; width: 100%; }
+
+/* 像素字体 */
+@font-face {
+  font-family: "PixelGame"; /* 自定义字体名 */
+  src: url("assets/font/Pixel Game.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "PixelGame", Arial, sans-serif; /* 改为你自定义字体名 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+/* 标题 */
+.title {
+  margin-top: 28px;
+  font-size: 48px;
+  text-align: center;
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* 中央按钮（选择性别页）*/
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* 自定义图片按钮 */
+.btn {
+  width: 72%;
+  max-width: 320px;
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 预览区 */
+.preview-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+/* 角色层（单图层预览） */
+.layer {
+  width: 220px;
+  height: 220px;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+  display: block;
+}
+
+/* 左右导航 */
+.nav-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 18px;
+}
+
+/* 导航按钮图片 */
+.nav-btn {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* 下一步按钮*/
+.next {
+  width: 170px; 
+  height: 70px;
+  border: none;       
+  background: url('assets/ui/next_btn.png') no-repeat center center;
+  background-size: contain; 
+  cursor: pointer;    
+  display: block;
+  margin: 0px auto;  
+}
+
+/* 结果页面叠展示 */
+.final-character {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin-top: 30px;
+}
+
+.final-character img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  image-rendering: pixelated;
+}
+
+/* small tweak for iPhone notch safe area */
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

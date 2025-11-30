@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Skin</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body style="background-image: url('assets/bg/skin_bg.png');">
+
+  <div class="title">Select Skin</div>
+
+  <div class="preview-box">
+    <img id="preview-skin" class="layer" alt="skin preview">
+  </div>
+
+  <div class="nav-row">
+    <img src="assets/ui/left.png" class="nav-btn" alt="left" onclick="switchSkin(-1)">
+    <img src="assets/ui/right.png" class="nav-btn" alt="right" onclick="switchSkin(1)">
+    
+  </div>
+
+  <button class="next" onclick="goToHair()"></button>
+
+</body>
+</html>

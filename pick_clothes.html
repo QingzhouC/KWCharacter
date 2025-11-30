@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Cloth</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body style="background-image: url('assets/bg/clothes_bg.png');">
+
+  <div class="title">Select Cloth</div>
+
+  <div class="preview-box">
+    <img id="preview-clothes" class="layer" alt="clothes preview">
+  </div>
+
+  <div class="nav-row">
+    <img src="assets/ui/left.png" class="nav-btn" alt="left" onclick="switchClothes(-1)">
+    <img src="assets/ui/right.png" class="nav-btn" alt="right" onclick="switchClothes(1)">
+  </div>
+
+  <button class="next" onclick="showFinal()"></button>
+
+</body>
+</html>
