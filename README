@@ -1,0 +1,40 @@
+project/
+│  index.html
+│  pick_skin.html
+│  pick_hair.html
+│  pick_clothes.html
+│  result.html
+│  style.css
+│  app.js
+└── assets/
+    ├─ bg/
+    │    gender_bg.png
+    │    skin_bg.png
+    │    hair_bg.png
+    │    clothes_bg.png
+    │    result_bg.png
+    ├─ ui/
+    │    left.png
+    │    right.png
+    │    male_btn.png
+    │    female_btn.png
+    │    next_btn.png   
+    ├─ characters/
+    │    ├─ male/
+    │    │    ├─ skin/
+    │    │    │   male_skin1.png
+    │    │    │   male_skin2.png
+    │    │    │   male_skin3.png
+    │    │    ├─ hair/
+    │    │    │   hair1_black.png
+    │    │    │   hair1_brown.png
+    │    │    │   hair1_blonde.png
+    │    │    │   hair2_black.png
+    │    │    │   ...
+    │    │    └─ clothes/
+    │    │        clothes1_blue.png
+    │    │        clothes1_red.png
+    │    │        ...
+    │    └─ female/  (same structure as male)
+    └─ font/
+         pixel-font.ttf
