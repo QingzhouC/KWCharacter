@@ -1,0 +1,24 @@
+{
+  "name": "kw-character",
+  "version": "1.0.0",
+  "description": "KW Character - A character customization web app with gender, skin, hair, and clothing selection",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npx serve .",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QingzhouC/KWCharacter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QingzhouC/KWCharacter/issues"
+  },
+  "homepage": "https://github.com/QingzhouC/KWCharacter#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
