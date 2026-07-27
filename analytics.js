@@ -1,29 +1,55 @@
 /**
  * Vercel Web Analytics initialization for vanilla JavaScript
  * 
- * This script initializes the Vercel Web Analytics tracking.
- * The analytics script is automatically injected by Vercel when deployed.
+ * This script initializes the Vercel Web Analytics tracking according to
+ * the official documentation at https://vercel.com/docs/analytics
  * 
- * For local development, events are logged to the console.
- * In production (on Vercel), events are sent to the analytics endpoint.
+ * The analytics script loads from Vercel's CDN and automatically tracks
+ * page views and web vitals.
+ * 
+ * In development, use script.debug.js to see console logs of events.
+ * In production, events are sent to Vercel's analytics endpoint.
  */
 
 (function() {
   'use strict';
   
   // Initialize the Vercel Analytics queue
+  // This allows calling window.va() before the script loads
   window.va = window.va || function () { 
     (window.vaq = window.vaq || []).push(arguments); 
   };
   
-  // Load the Vercel Web Analytics script
+  // Optional: Configure beforeSend hook for filtering events
+  // window.va('beforeSend', (event) => {
+  //   // Example: Filter out private URLs
+  //   if (event.url.includes('/private')) {
+  //     return null;
+  //   }
+  //   return event;
+  // });
+  
+  // Load the Vercel Web Analytics script from CDN
   var script = document.createElement('script');
   script.defer = true;
-  script.src = '/_vercel/insights/script.js';
+  
+  // Use debug script in development, production script otherwise
+  // The debug script logs events to console for verification
+  var isDevelopment = window.location.hostname === 'localhost' || 
+                      window.location.hostname === '127.0.0.1' ||
+                      window.location.hostname === '';
+  
+  script.src = isDevelopment 
+    ? 'https://cdn.vercel-insights.com/v1/script.debug.js'
+    : 'https://cdn.vercel-insights.com/v1/script.js';
   
   // Error handling for script loading
   script.onerror = function() {
-    console.warn('Vercel Analytics: Failed to load analytics script. This is expected in local development.');
+    if (isDevelopment) {
+      console.info('Vercel Analytics: Running in development mode. Events will be logged to console.');
+    } else {
+      console.warn('Vercel Analytics: Failed to load analytics script.');
+    }
   };
   
   // Insert script into the document
@@ -34,7 +60,9 @@
     document.head.appendChild(script);
   }
   
-  // Optional: Track page views manually (useful for SPAs)
-  // For multi-page apps like this one, automatic tracking is usually sufficient
+  // Log initialization in development
+  if (isDevelopment) {
+    console.log('Vercel Web Analytics initialized in debug mode');
+  }
   
 })();
